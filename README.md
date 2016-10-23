@@ -1,4 +1,4 @@
-# GitLab Integraton
+# GitLab Integration
 GitLab Integration scripts
 
 glconfig.py sets the authentication and URL for your instance of GitLab.  Run glconfig -h to get the full details.
