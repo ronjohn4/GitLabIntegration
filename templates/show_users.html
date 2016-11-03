@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>State</td>
+            <td>Last Sign In</td>
+            <td>Seq</td>
+        </tr>
+        {% for entry in entries %}
+            <tr>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.email }}</td>
+                <td>{{ entry.state }}</td>
+                <td>{{ entry.last_sign_in_at }}</td>
+                <td>{{ entry.seq }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No GitHub users found</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
