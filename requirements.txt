@@ -2,8 +2,12 @@ click==6.6
 DataPrint==1.1
 docopt==0.6.2
 Flask==0.11.1
+Flask-Menu==0.5.1
+freeze==1.0.10
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
 requests==2.11.1
+six==1.10.0
+virtualenv==15.0.3
 Werkzeug==0.11.11

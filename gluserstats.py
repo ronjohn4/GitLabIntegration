@@ -26,7 +26,7 @@ if not getToken() or not getURL():
     print('use glconfig to configure your GitLab instance.')
     exit(0)
 
-gl_data = glData(getURL(), getToken())
+gl_data = glUserData(getURL(), getToken())
 gl_data = gl_data.data()
 total_active = 0
 stats = {}
@@ -57,7 +57,7 @@ for person in gl_data:
 
 
 # preprocess status
-stats_sorted = sorted(stats.items(), key=operator.itemgetter(0))
+stats_sorted = sorted(stats.items(), reverse=True, key=operator.itemgetter(0))
 running_total = 0
 for s in stats_sorted:
     running_total += s[1].get('active', 0)

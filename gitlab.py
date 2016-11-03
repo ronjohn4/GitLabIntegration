@@ -31,7 +31,7 @@ def getURL():
     return return_val
 
 
-class glData():
+class glUserData():
     _data = []
     _headers = []
     _payload = ''
@@ -46,6 +46,7 @@ class glData():
 
     def _pull_data(self):
         r = requests.get(self._url, params=self._payload)
+        self._data = []
 
         # set headers
         if int(r.headers['Content-Length']) > 2:
@@ -64,9 +65,19 @@ class glData():
                 if int(r.headers['Content-Length']) <= 2:
                     break
                 d = r.json()
+                # break    #use for shorter dev cycles
 
     def data(self):
         return self._data
 
     def headers(self):
         return self._headers
+
+# {'identities': [], 'state': 'active', 'skype': '', 'can_create_project': True, 'id': 277, 'can_create_group': True,
+# 'linkedin': '', 'created_at': '2016-09-29T19:46:46.321Z', 'website_url': '', 'username': 'daveryan',
+# 'projects_limit': 10, 'is_admin': False, 'bio': None, 'two_factor_enabled': True,
+# 'web_url': 'https://gitlab.spectrumxg.com/u/daveryan', 'email': 'david.d.ryan@charter.com', 'external': False,
+# 'color_scheme_id': 1, 'confirmed_at': '2016-09-29T19:47:02.992Z', 'location': None,
+# 'last_sign_in_at': '2016-09-29T19:47:02.999Z', 'name': 'David Ryan',
+# 'avatar_url': 'https://secure.gravatar.com/avatar/1c17ac50314193b70a3193d823a933a6?s=80&d=identicon',
+# 'twitter': '', 'current_sign_in_at': '2016-09-29T19:47:02.999Z', 'theme_id': 2}

@@ -18,7 +18,7 @@ from docopt import docopt
 from gitlab import *
 
 if __name__ == '__main__':
-    arguments = docopt(__doc__, version='GitLab User List 1.0')
+    arguments = docopt(__doc__, version='GitLab User List CSV 1.0')
 
 if not getToken() or not getURL():
     print('use glconfig to configure your GitLab instance.')
@@ -26,7 +26,7 @@ if not getToken() or not getURL():
 
 total_active = 0
 stats = {}
-gld = glData(getURL(), getToken())
+gld = glUserData(getURL(), getToken())
 gl_data = gld.data()
 headers = gld.headers()
 

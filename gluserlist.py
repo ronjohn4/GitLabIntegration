@@ -30,7 +30,7 @@ if not getToken() or not getURL():
     print('use glconfig to configure your GitLab instance.')
     exit(0)
 
-gld = glData(getURL(), getToken())
+gld = glUserData(getURL(), getToken())
 gl_data = gld.data()
 
 # set header
