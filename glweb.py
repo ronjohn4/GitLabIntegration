@@ -12,11 +12,6 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/hello')
-def hello():
-    return "Hello World"
-
-
 @app.route('/list')
 def list():
     return_list = []
